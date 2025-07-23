@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="application.InicioController"
+            prefWidth="500.0" prefHeight="620.0" style="-fx-background-color: linear-gradient(to bottom, #e0f7fa, #ffffff); -fx-padding: 20;">
+    
+    <VBox alignment="CENTER" spacing="20.0" layoutX="30.0" layoutY="20.0" prefWidth="440.0">
+
+        <Label text="Planificación Nutricional Personalizada" 
+               style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #00796b;" />
+
+        <GridPane hgap="15.0" vgap="15.0" style="-fx-background-color: #ffffff; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 4);">
+            
+            <Label text="Género:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cmbGenero" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="200"/>
+
+            <Label text="Edad:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtEdad" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="200"/>
+
+            <Label text="Peso (kg):" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtPeso" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="200"/>
+
+            <Label text="Altura (cm):" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtAltura" GridPane.rowIndex="3" GridPane.columnIndex="1" prefWidth="200"/>
+
+            <Label text="Entrenamientos/semana:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <VBox spacing="5" GridPane.rowIndex="4" GridPane.columnIndex="1">
+                <Slider fx:id="sliderFrecuencia" min="0" max="7" value="0" majorTickUnit="1" minorTickCount="0"
+                        blockIncrement="1" snapToTicks="true" showTickMarks="true" showTickLabels="true"
+                        style="-fx-control-inner-background: #e0f2f1;" />
+                <Label fx:id="lblFrecuencia" text="0 días" style="-fx-text-fill: #555555;"/>
+            </VBox>
+        </GridPane>
+
+        <Button text="Calcular Calorías de Mantenimiento" onAction="#calcularCalorias"
+                style="-fx-background-color: #009688; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 8 16;" />
+
+        <Label fx:id="lblResultado" text="" 
+               style="-fx-font-size: 14px; -fx-text-fill: #00796b;"/>
+
+        <Button fx:id="btnContinuar" text="Continuar al Plan Nutricional" onAction="#irAPlan" disable="true"
+                style="-fx-background-color: #00796b; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 8 16;" />
+    </VBox>
+</AnchorPane>
+

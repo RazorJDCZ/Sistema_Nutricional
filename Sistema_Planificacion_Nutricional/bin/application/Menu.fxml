@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="application.MenuController"
+            prefWidth="600.0" prefHeight="500.0"
+            style="-fx-background-color: linear-gradient(to bottom, #e0f7fa, #ffffff); -fx-padding: 20;">
+
+    <VBox alignment="CENTER" spacing="25.0" layoutX="100.0" layoutY="40.0" prefWidth="400.0"
+          style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-padding: 30; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 4);">
+
+        <Label text="Menú Principal" 
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #00796b;" />
+
+        <Label fx:id="lblCalorias" text="Cargando calorías..." 
+               style="-fx-font-size: 16px; -fx-text-fill: #444;" />
+
+        <Button text="Ver Productos Disponibles" onAction="#abrirProductos" prefWidth="280.0"
+                style="-fx-background-color: #009688; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;" />
+
+        <Button text="Crear Plan Nutricional" onAction="#abrirPlanificador" prefWidth="280.0"
+                style="-fx-background-color: #00796b; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;" />
+
+        <Button text="Ver Resumen Nutricional" onAction="#abrirResumen" prefWidth="280.0"
+                style="-fx-background-color: #00796b; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;" />
+
+        <Button text="Volver al Inicio" onAction="#volverAInicio" prefWidth="280.0"
+                style="-fx-background-color: #b0bec5; -fx-text-fill: #263238; -fx-font-weight: bold; -fx-background-radius: 5;" />
+
+    </VBox>
+</AnchorPane>
+
+
+
+

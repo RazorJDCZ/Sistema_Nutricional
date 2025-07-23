@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="application.PlanificadorController"
+            prefWidth="900.0" prefHeight="600.0"
+            style="-fx-background-color: linear-gradient(to bottom, #e3f2fd, #ffffff); -fx-padding: 20;">
+
+    <VBox spacing="20.0" layoutX="30.0" layoutY="20.0" prefWidth="840.0" alignment="TOP_CENTER"
+          style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-padding: 30; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 4);">
+
+        <Label text="Plan Nutricional Personalizado"
+               style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1e88e5;" />
+
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <Label text="Filtrar recetas por grupo etario:" style="-fx-font-size: 14px;" />
+            <ComboBox fx:id="cmbFiltroGrupo" promptText="Selecciona grupo"
+                      style="-fx-background-radius: 6; -fx-padding: 5;" />
+            <Button text="Filtrar" onAction="#filtrarRecetas"
+                    style="-fx-background-color: #64b5f6; -fx-text-fill: white; -fx-background-radius: 6;" />
+        </HBox>
+
+        <TableView fx:id="tablaRecetas" prefHeight="200.0"
+                   style="-fx-background-radius: 8; -fx-border-radius: 8;">
+            <columns>
+                <TableColumn fx:id="colNombre" text="Receta" prefWidth="200.0" />
+                <TableColumn fx:id="colDescripcion" text="Descripción" prefWidth="400.0" />
+                <TableColumn fx:id="colAccion" text="Agregar" prefWidth="100.0" />
+            </columns>
+        </TableView>
+
+        <Label text="Plan Nutricional Actual"
+               style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #388e3c;" />
+
+        <TableView fx:id="tablaDetalle" prefHeight="200.0"
+                   style="-fx-background-radius: 8; -fx-border-radius: 8;">
+            <columns>
+                <TableColumn fx:id="colDia" text="Día" prefWidth="150.0" />
+                <TableColumn fx:id="colProducto" text="Producto" prefWidth="350.0" />
+                <TableColumn fx:id="colCantidad" text="Cantidad" prefWidth="150.0" />
+            </columns>
+        </TableView>
+
+        <HBox spacing="10.0" alignment="CENTER_RIGHT">
+            <Button text="Guardar Plan" onAction="#guardarPlan"
+                    style="-fx-background-color: #4caf50; -fx-text-fill: white; -fx-background-radius: 6; -fx-font-weight: bold;" />
+            <Button text="Volver" onAction="#volverAtras"
+                    style="-fx-background-color: #cfd8dc; -fx-text-fill: #263238; -fx-background-radius: 6;" />
+        </HBox>
+    </VBox>
+</AnchorPane>
+
+
